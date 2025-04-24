@@ -1,4 +1,4 @@
-/* Reset default styles for all elements */
+/* resetēt sākotnējus stili visiem elementiem */
 * {
     margin: 0;
     padding: 0;
@@ -6,7 +6,7 @@
     font-family: Arial, sans-serif;
 }
 
-/* Main body styles */
+/* Galvenās sadaļas stili */
 body {
     background-color: #f0f2f5;
     min-height: 100vh;
@@ -15,7 +15,7 @@ body {
     align-items: center;
 }
 
-/* Container for the entire application */
+/* Kontaineris visai programmai */
 .container {
     background-color: white;
     padding: 2rem;
@@ -25,19 +25,19 @@ body {
     max-width: 500px;
 }
 
-/* Title styles */
+/* Nosaukuma stili */
 h1 {
     text-align: center;
     color: #333;
     margin-bottom: 1.5rem;
 }
 
-/* Input section styles */
+/* Ievades sadaļas stili */
 .input-section {
     margin-bottom: 1.5rem;
 }
 
-/* Input field styles */
+/* Ievades lauka stili */
 input {
     width: 100%;
     padding: 0.8rem;
@@ -47,7 +47,7 @@ input {
     font-size: 1rem;
 }
 
-/* Button styles */
+/* Poga stili */
 button {
     background-color: #4CAF50;
     color: white;
@@ -60,18 +60,18 @@ button {
     transition: background-color 0.3s;
 }
 
-/* Button hover effect */
+/* Poga pārklājuma efekts */
 button:hover {
     background-color: #45a049;
 }
 
-/* Disabled button styles */
+/* Neaktivētā poga stili */
 button:disabled {
     background-color: #cccccc;
     cursor: not-allowed;
 }
 
-/* QR code container styles */
+/* QR koda kontainera stili */
 .qr-container {
     display: flex;
     justify-content: center;
@@ -79,14 +79,14 @@ button:disabled {
     min-height: 200px;
 }
 
-/* QR code element styles */
+/* QR koda elementa stili */
 #qrcode {
     padding: 1rem;
     background-color: white;
     border-radius: 5px;
 }
 
-/* Download section styles */
+/* Lejupielādes sadaļas stili */
 .download-section {
     margin-top: 1.5rem;
 }

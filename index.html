@@ -3,28 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QR-code generator</title>
+    <title>QR-koda ģenerators</title>
 
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 </head>
 <body>
-    <!-- Main container for the application -->
+    <!-- Galvenais kontaineris -->
     <div class="container">
-        <!-- Application title -->
-        <h1>QR-code generator</h1>
-        <!-- Input section for text and generation button -->
+        <!-- Programmas nosaukums -->
+        <h1>QR-koda ģenerators</h1>
+        <!-- Ievades sadaļa teksta un ģenerētāja pogu -->
         <div class="input-section">
-            <input type="text" id="text-input" placeholder="Enter text or URL">
-            <button id="generate-btn">Generate QR-code</button>
+            <input type="text" id="text-input" placeholder="Ievadiet tekstu vai URL">
+            <button id="generate-btn">Ģenerēt QR kodu</button>
         </div>
-        <!-- Container for displaying the generated QR code -->
+        <!-- Kontaineris, kur tiek rādīt QR kodu -->
         <div class="qr-container">
             <div id="qrcode"></div>
         </div>
-        <!-- Download section with button -->
+        <!-- Lejupielādes sadaļa ar pogu -->
         <div class="download-section">
-            <button id="download-btn" disabled>Download QR-code</button>
+            <button id="download-btn" disabled>Lejupielādēt QR kodu</button>
         </div>
     </div>
 
