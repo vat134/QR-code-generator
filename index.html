@@ -1,31 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="lv">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QR-koda ģenerators</title>
-
     <link rel="stylesheet" href="styles.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/qr-code-styling@1.5.0/lib/qr-code-styling.js"></script>
 </head>
 <body>
-    <!-- Galvenais kontaineris -->
     <div class="container">
-        <!-- Programmas nosaukums -->
-        <h1>QR-koda ģenerators</h1>
-        <!-- Ievades sadaļa teksta un ģenerētāja pogu -->
+        <h1 id="main-title">QR-koda ģenerators</h1>
         <div class="input-section">
             <input type="text" id="text-input" placeholder="Ievadiet tekstu vai URL">
             <button id="generate-btn">Ģenerēt QR kodu</button>
         </div>
-        <!-- Kontaineris, kur tiek rādīt QR kodu -->
+
         <div class="qr-container">
-            <div id="qrcode"></div>
+            <div id="styled-qr"></div>
         </div>
-        <!-- Lejupielādes sadaļa ar pogu -->
+
         <div class="download-section">
             <button id="download-btn" disabled>Lejupielādēt QR kodu</button>
         </div>
+    </div>
+
+    <div class="settings">
+        <h2>Iestatījumi</h2>
+
+        <label for="qr-size">Izmērs:</label>
+        <input type="range" id="qr-size" min="100" max="500" value="300">
+
+        <label for="qr-color">Krāsa:</label>
+        <input type="color" id="qr-color" value="#000000">
+
+        <label for="dot-style">Punktu forma:</label>
+        <select id="dot-style">
+            <option value="square">Kvadrāts</option>
+            <option value="dots">Punkti</option>
+            <option value="rounded">Apaļi</option>
+            <option value="classy">Stilīgs</option>
+        </select>
     </div>
 
     <script src="script.js"></script>
