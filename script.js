@@ -1,51 +1,60 @@
-// Pagaidiet, līdz HTML saturs ir pilnībā ielādēts
 document.addEventListener('DOMContentLoaded', () => {
-    // Iegūstiet atsauces uz DOM elementiem
-    const textInput = document.getElementById('text-input');
+    const Input = document.getElementById('text-input');
     const generateBtn = document.getElementById('generate-btn');
     const downloadBtn = document.getElementById('download-btn');
-    const qrcodeDiv = document.getElementById('qrcode');
+    const qrContainer = document.getElementById('styled-qr');
 
-    // Pievienojiet notikumu listeners pogu
-    generateBtn.addEventListener('click', generateQRCode);
-    downloadBtn.addEventListener('click', downloadQRCode);
+    const sizeInput = document.getElementById('qr-size');
+    const colorInput = document.getElementById('qr-color');
+    const dotStyleInput = document.getElementById('dot-style');
 
-    // Funkcija, lai ģenerētu QR kodu
-    function generateQRCode() {
-        // Iegūstiet un noņemiet ievades teksta tukšumus
-        const text = textInput.value.trim();
-        // Pārbaudiet, vai ievade ir tukša
-        if (!text) {
-            alert('Ievadiet tekstu vai URL');
-            return;
+    let qrCode = new QRCodeStyling({
+        width: parseInt(sizeInput.value),
+        height: parseInt(sizeInput.value),
+        type: "canvas",
+        data: "",
+        dotsOptions: {
+            color: colorInput.value,
+            type: dotStyleInput.value
+        },
+        backgroundOptions: {
+            color: "#FFFFFF"
+        },
+        cornersSquareOptions: {
+            type: "extra-rounded"
         }
+    });
 
-        // Notīriet iepriekšējo QR kodu
-        qrcodeDiv.innerHTML = '';
-        // Izveidojiet jaunu QR kodu ar norādītajām opcijām
-        new QRCode(qrcodeDiv, {
-            text: text,                    // Teksts, kas jākodē
-            width: 200,                    // QR koda platums
-            height: 200,                   // QR koda augstums
-            colorDark: '#000000',          // Tumšās kvadrātu krāsa (melna)
-            colorLight: 'rgba(0, 0, 0, 0)', // Tikai tukšās kvadrātu krāsa (transparenta)
-            correctLevel: QRCode.CorrectLevel.H // Kļūdas korekcijas līmenis (Augsts)
+    qrCode.append(qrContainer);
+
+    function updateQRCode() {
+        const text = Input.value.trim();
+        if (!text) return;
+
+        qrCode.update({
+            width: parseInt(sizeInput.value),
+            height: parseInt(sizeInput.value),
+            data: text,
+            dotsOptions: {
+                color: colorInput.value,
+                type: dotStyleInput.value
+            },
+            backgroundOptions: {
+                color: "#FFFFFF"
+            }
         });
 
-        // Iespējot lejupielādes pogu pēc QR koda ģenerēšanas
         downloadBtn.disabled = false;
     }
 
-    // Funkcija, lai lejupielādētu QR kodu kā PNG
-    function downloadQRCode() {
-        // Iegūstiet canvas elementu, kurā ir QR kods
-        const canvas = qrcodeDiv.querySelector('canvas');
-        if (!canvas) return;
+    generateBtn.addEventListener('click', updateQRCode);
 
-        // Izveidojiet lejupielādes saiti
-        const link = document.createElement('a');
-        link.download = 'qr-code.png';     // Iestatiet faila nosaukumu
-        link.href = canvas.toDataURL('image/png'); // Pārvērst canvas par PNG
-        link.click();                      // Aktivēt lejupielādi
-    }
+    Input.addEventListener('input', updateQRCode);
+    sizeInput.addEventListener('input', updateQRCode);
+    colorInput.addEventListener('input', updateQRCode);
+    dotStyleInput.addEventListener('change', updateQRCode);
+
+    downloadBtn.addEventListener('click', () => {
+        qrCode.download({ name: "qr-kods", extension: "png" });
+    });
 });

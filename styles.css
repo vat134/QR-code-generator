@@ -1,92 +1,126 @@
-/* resetēt sākotnējus stili visiem elementiem */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: sans-serif;
 }
 
-/* Galvenās sadaļas stili */
 body {
-    background-color: #f0f2f5;
-    min-height: 100vh;
+    background-color: #f5f5f5;
     display: flex;
+    flex-direction: row;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+    gap: 2rem;
+    padding: 40px;
+    min-height: 100vh;
 }
 
-/* Kontaineris visai programmai */
 .container {
-    background-color: white;
+    background-color: #fff;
     padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    width: 90%;
-    max-width: 500px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    max-width: 600px;
+    width: 100%;
 }
 
-/* Nosaukuma stili */
 h1 {
     text-align: center;
-    color: #333;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
+    font-size: 2.2rem;
+    background: linear-gradient(45deg, #4a148c, #ca0505, #4a148c, #ca0505);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 400% 400%;
+    animation: waveAnimation 20s ease infinite;
 }
 
-/* Ievades sadaļas stili */
+@keyframes waveAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
 .input-section {
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
 }
 
-/* Ievades lauka stili */
-input {
+input[type="text"] {
     width: 100%;
-    padding: 0.8rem;
+    padding: 1rem;
     border: 1px solid #ddd;
-    border-radius: 5px;
-    margin-bottom: 1rem;
-    font-size: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1.2rem;
+    font-size: 1.1rem;
+    outline: none;
 }
 
-/* Poga stili */
 button {
-    background-color: #4CAF50;
+    background-color: #000000;
     color: white;
     border: none;
-    padding: 0.8rem 1.5rem;
-    border-radius: 5px;
+    padding: 1rem 2rem;
+    border-radius: 8px;
     cursor: pointer;
-    font-size: 1rem;
+    font-size: 1.1rem;
     width: 100%;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s ease;
 }
 
-/* Poga pārklājuma efekts */
 button:hover {
-    background-color: #45a049;
+    background-color: #4a148c;
 }
 
-/* Neaktivētā poga stili */
 button:disabled {
-    background-color: #cccccc;
+    background-color: #9e9e9e;
     cursor: not-allowed;
 }
 
-/* QR koda kontainera stili */
 .qr-container {
     display: flex;
     justify-content: center;
-    margin: 1.5rem 0;
+    margin: 2rem 0;
     min-height: 200px;
 }
 
-/* QR koda elementa stili */
-#qrcode {
-    padding: 1rem;
-    background-color: white;
-    border-radius: 5px;
+.download-section {
+    margin-top: 2rem;
 }
 
-/* Lejupielādes sadaļas stili */
-.download-section {
-    margin-top: 1.5rem;
+.settings {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    max-width: 250px;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.settings h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.settings label {
+    display: block;
+    margin-top: 1rem;
+    font-weight: bold;
+}
+
+.settings input,
+.settings select {
+    width: 100%;
+    margin-top: 0.3rem;
+    padding: 0.4rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
 }
