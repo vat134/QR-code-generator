@@ -25,6 +25,7 @@ body {
     width: 100%;
 }
 
+/* animacija */
 h1 {
     text-align: center;
     margin-bottom: 2rem;
@@ -47,6 +48,7 @@ h1 {
         background-position: 0% 50%;
     }
 }
+/* animacija */
 
 .input-section {
     margin-bottom: 2rem;
@@ -78,6 +80,7 @@ button:hover {
     background-color: #4a148c;
 }
 
+/* nepieejamas pogas stils  */
 button:disabled {
     background-color: #9e9e9e;
     cursor: not-allowed;
@@ -123,4 +126,34 @@ button:disabled {
     padding: 0.4rem;
     border-radius: 6px;
     border: 1px solid #ccc;
+}
+
+/* Pielāgojamība: izmaiņas mobilajās ierīcēs  */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .container {
+        width: 100%;
+        padding: 1rem;
+    }
+
+    .settings {
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+    .input-section input {
+        font-size: 1rem;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    button {
+        font-size: 1rem;
+    }
 }
