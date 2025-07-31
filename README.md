@@ -6,6 +6,8 @@ QR-koda ģenerators ir vienkāršs tīmekļa rīks, kas ļauj lietotājiem ievad
 
 ## Pārskats
 
+<img width="2560" height="1314" alt="изображение" src="https://github.com/user-attachments/assets/760102bf-a906-4f3b-80f9-30fca5b78615" />
+
 ### Projekta apraksts
 
 Projekts ir veidots kā interaktīva tīmekļa lietotne, izmantojot HTML, CSS, JavaScript un bibliotēku **QRCodeStyling**. Generators ir tīmekļa lietojumprogramma, kas ļauj lietotājiem ģenerēt QR kodus ar pielāgojamiem parametriem. Lietotāji var ievadīt tekstu vai URL, izvēlēties QR koda izmēru, krāsu un punktu stilu, un lejupielādēt ģenerēto QR kodu kā attēlu.
